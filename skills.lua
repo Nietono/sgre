@@ -7423,7 +7423,7 @@ end,
 -- Tinia and Luthica
 -- Magic scroll
 [1702] = function(pl, my_idx, my_card, skill_idx)
-  OneBuff(pl, my_idx, "+3 _ +2"):apply()
+  OneBuff(pl, my_idx, "+3 +2 _"):apply()
   my_card:remove_skill(skill_idx)
 end,
 
