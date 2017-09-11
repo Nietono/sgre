@@ -7382,8 +7382,9 @@ end,
   local idx = uniformly(pl:hand_idxs_with_preds(pred.follower, pred_sta))
   if idx then
     local buff = GlobalBuff(pl)
+	local mag = abs(pl.hand[idx].atk - 1) + abs(pl.hand[idx].sta - 1)
     buff.hand[pl][idx] = "=1 _ =1"
-    buff.field[pl][my_idx] = {atk={"+", abs(pl.hand[idx].atk - 1)}, sta={"+", abs(pl.hand[idx].sta - 1)}}
+    buff.field[pl][my_idx] = {atk={"+", mag}}
     buff:apply()
   else
     OneImpact(pl, my_idx):apply()
